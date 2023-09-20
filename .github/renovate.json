@@ -1,0 +1,16 @@
+{
+  "extends": ["github>KubeArchitect/renovate-config#release"],
+  "baseBranches": ["main"],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "pinDigests": true,    },
+    {
+      "matchPackageNames": ["renovate/renovate"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+    }
+  ]
+}
