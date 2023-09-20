@@ -1,16 +1,22 @@
 {
-  "extends": ["github>KubeArchitect/renovate-config#release"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [ 
+    "config:best-practices",
+    "config:recommended"
+  ],
   "baseBranches": ["main"],
+  "git-submodules": {
+    "enabled": true
+  },
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$","\\.yml$"]
+  },
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
+      "matchManagers": ["github-actions", "renovate/renovate"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
-      "pinDigests": true,    },
-    {
-      "matchPackageNames": ["renovate/renovate"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
+      "pinDigests": true
     }
   ]
 }

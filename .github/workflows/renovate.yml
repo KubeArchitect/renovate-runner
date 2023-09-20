@@ -5,7 +5,7 @@ on:
     - cron: '0/15 * * * *'
 jobs:
   renovate:
-    runs-on: ubuntu-latest
+    runs-on: selfhosted-linux
     steps:
       - name: Checkout
         uses: actions/checkout@v3.6.0
@@ -14,3 +14,6 @@ jobs:
         with:
           configurationFile: .github/renovate-config.js
           token: ${{ secrets.KUBEARCHITECT_TOKEN }}
+        env:
+          RENOVATE_AUTODISCOVER: true
+          RENOVATE_PLATFORM: github
