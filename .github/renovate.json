@@ -13,7 +13,7 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["github-actions", "renovate/renovate"],
+      "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "pinDigests": true
