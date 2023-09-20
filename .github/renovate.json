@@ -17,6 +17,12 @@
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "pinDigests": true
+    },
+    {
+      "matchManagers": ["docker-compose", "dockerfile", "flux", "git-submodules", "helm-requirements", "helm-values", "helmfile", "helmsman", "helmv3", "kubernetes", "kustomize", "terraform", "terraform-version", "terragrunt", "terragrunt-version", "tflint-plugin", "regex"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "automerge": false,
+      "pinDigests": true
     }
   ]
 }
