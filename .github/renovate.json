@@ -4,7 +4,7 @@
     "config:best-practices",
     "config:recommended"
   ],
-  "baseBranches": ["main","master"],
+  "baseBranches": ["main"],
   "git-submodules": {
     "enabled": true
   },
