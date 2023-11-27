@@ -1,26 +1,58 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [ 
+  "extends": [
     "config:best-practices",
     "config:recommended"
   ],
-  "baseBranches": ["main"],
+  "baseBranches": [
+    "main"
+  ],
   "git-submodules": {
     "enabled": true
   },
   "kubernetes": {
-    "fileMatch": ["\\.yaml$","\\.yml$"]
+    "fileMatch": [
+      "\\.yaml$",
+      "\\.yml$"
+    ]
   },
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "pinDigests": true
     },
     {
-      "matchManagers": ["docker-compose", "dockerfile", "flux", "git-submodules", "helm-requirements", "helm-values", "helmfile", "helmsman", "helmv3", "kubernetes", "kustomize", "terraform", "terraform-version", "terragrunt", "terragrunt-version", "tflint-plugin", "regex"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchManagers": [
+        "docker-compose",
+        "dockerfile",
+        "flux",
+        "git-submodules",
+        "helm-requirements",
+        "helm-values",
+        "helmfile",
+        "helmsman",
+        "helmv3",
+        "kubernetes",
+        "kustomize",
+        "terraform",
+        "terraform-version",
+        "terragrunt",
+        "terragrunt-version",
+        "tflint-plugin",
+        "custom.regex"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
       "automerge": false,
       "pinDigests": true
     }
