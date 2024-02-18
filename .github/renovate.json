@@ -1,11 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "additionalBranchPrefix": "{{parentDir}}-",
+  "configMigration": true,
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
+  "lockFileMaintenance": { "enabled": true },
+  "reviewers": ["RelativeSure"],
   "extends": [
     "config:best-practices",
     "config:recommended"
   ],
   "baseBranches": [
-    "main"
+    "main",
+    "master"
   ],
   "git-submodules": {
     "enabled": true
@@ -16,24 +23,20 @@
       "\\.yml$"
     ]
   },
+  "automerge": true,
+  "automergeType": "pr-comment",
+  "automergeComment": "bors: r+",
   "packageRules": [
     {
       "matchManagers": [
-        "github-actions"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "automerge": true,
-      "pinDigests": true
-    },
-    {
-      "matchManagers": [
+        "ansible",
+        "ansible-galaxy",
+        "bun",
         "docker-compose",
         "dockerfile",
         "flux",
         "git-submodules",
+        "github-actions",
         "helm-requirements",
         "helm-values",
         "helmfile",
@@ -41,6 +44,9 @@
         "helmv3",
         "kubernetes",
         "kustomize",
+        "nodenv",
+        "npm",
+        "nvm",
         "terraform",
         "terraform-version",
         "terragrunt",
@@ -51,10 +57,18 @@
       "matchUpdateTypes": [
         "major",
         "minor",
-        "patch"
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump",
+        "replacement"
       ],
-      "automerge": false,
-      "pinDigests": true
+      "automerge": true,
+      "pinDigests": true,
+      "rollbackPrs": true
     }
   ]
 }
