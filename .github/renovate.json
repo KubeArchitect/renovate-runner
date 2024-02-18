@@ -72,8 +72,7 @@
         "replacement"
       ],
       "automerge": true,
-      "pinDigests": true,
-      "rollbackPrs": true
+      "pinDigests": true
     }
   ]
 }
