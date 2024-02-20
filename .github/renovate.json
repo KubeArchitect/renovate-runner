@@ -5,7 +5,6 @@
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": { "enabled": true },
-  "reviewers": ["RelativeSure"],
   "extends": [
     ":dependencyDashboard",
     ":semanticPrefixFixDepsChoreOthers",
