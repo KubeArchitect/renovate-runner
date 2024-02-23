@@ -12,7 +12,7 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@8f6b0f762415909f60b0efb1817c4dee029ea806 # v40.1.1
         with:
-          configurationFile: .github/renovate.json
+          configurationFile: .github/renovate.json5
           token: ${{ secrets.KUBEARCHITECT_TOKEN }}
         env:
           RENOVATE_AUTODISCOVER: true
