@@ -6,9 +6,6 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": { "enabled": true },
   "automerge": true,
-  "digest": {
-    "automerge": true
-  }
   "extends": [
     "config:recommended",
     "docker:pinDigests",
@@ -43,7 +40,7 @@
     "terraform",
     "terraform-version",
     "tflint-plugin",
-  ]
+  ],
   "packageRules": [
     { "updateTypes": ["major"], "addLabels": ["SemVer Major"] },
     { "updateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
