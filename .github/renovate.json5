@@ -42,10 +42,16 @@
     "tflint-plugin",
   ],
   "packageRules": [
-    { "updateTypes": ["major"], "addLabels": ["SemVer Major"] },
-    { "updateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
-    { "updateTypes": ["lockFileMaintenance"], "addLabels": ["SemVer lockFileMaintenance"] },
-    { "updateTypes": ["patch", "digest", "bump"], "addLabels": ["SemVer Patch"] },
-    { "languages": ["js"], "addLabels": ["Lang JS"] }
+    { "matchUpdateTypes": ["major"], "addLabels": ["SemVer Major"] },
+    { "matchUpdateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
+    { 
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "addLabels": ["SemVer lockFileMaintenance"] 
+    },
+    { 
+      "matchUpdateTypes": ["patch", "digest", "bump"],
+      "addLabels": ["SemVer Patch"]
+    },
+    { "matchCategories": ["js"], "addLabels": ["Lang JS"] }
   ]
 }
