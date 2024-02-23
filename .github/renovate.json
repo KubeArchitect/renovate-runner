@@ -5,71 +5,50 @@
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": { "enabled": true },
+  "automerge": true,
+  "digest": {
+    "automerge": true
+  }
   "extends": [
-    ":dependencyDashboard",
-    ":semanticPrefixFixDepsChoreOthers",
-    ":ignoreModulesAndTests",
-    "group:monorepos",
-    "group:recommended",
-    "replacements:all",
-    "workarounds:all"
+    "config:recommended",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests",
+    ":pinDevDependencies"
   ],
-  "baseBranches": [
-    "main",
-    "master"
-  ],
-  "git-submodules": {
-    "enabled": true
-  },
   "kubernetes": {
     "fileMatch": [
       "\\.yaml$",
       "\\.yml$"
     ]
   },
-  "automerge": true,
+  "npm": {
+    "enabled": true
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "enabledManagers": [
+    "ansible",
+    "ansible-galaxy",
+    "bun",
+    "dockerfile",
+    "flux",
+    "github-actions",
+    "helm-values",
+    "helmfile",
+    "helmv3",
+    "kubernetes",
+    "kustomize",
+    "npm",
+    "terraform",
+    "terraform-version",
+    "tflint-plugin",
+  ]
   "packageRules": [
-    {
-      "matchManagers": [
-        "ansible",
-        "ansible-galaxy",
-        "bun",
-        "docker-compose",
-        "dockerfile",
-        "flux",
-        "git-submodules",
-        "github-actions",
-        "helm-requirements",
-        "helm-values",
-        "helmfile",
-        "helmsman",
-        "helmv3",
-        "kubernetes",
-        "kustomize",
-        "nodenv",
-        "npm",
-        "nvm",
-        "terraform",
-        "terraform-version",
-        "terragrunt",
-        "terragrunt-version",
-        "tflint-plugin",
-        "custom.regex"
-      ],
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch",
-        "pin",
-        "pinDigest",
-        "digest",
-        "lockFileMaintenance",
-        "rollback",
-        "bump",
-        "replacement"
-      ],
-      "automerge": true,
-      "pinDigests": true
-    }
+    { "updateTypes": ["major"], "addLabels": ["SemVer Major"] },
+    { "updateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
+    { "updateTypes": ["lockFileMaintenance"], "addLabels": ["SemVer lockFileMaintenance"] },
+    { "updateTypes": ["patch", "digest", "bump"], "addLabels": ["SemVer Patch"] },
+    { "languages": ["js"], "addLabels": ["Lang JS"] }
   ]
 }
