@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "additionalBranchPrefix": "{{parentDir}}-",
   "configMigration": true,
+  "commitMessageAction": "chore(Deps)",
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": { "enabled": true },
