@@ -22,6 +22,9 @@
   "npm": {
     "enabled": true
   },
+  "nix": {
+    "enabled": true
+  }
   "vulnerabilityAlerts": {
     "enabled": true
   },
