@@ -24,7 +24,7 @@
   },
   "nix": {
     "enabled": true
-  }
+  },
   "vulnerabilityAlerts": {
     "enabled": true
   },
