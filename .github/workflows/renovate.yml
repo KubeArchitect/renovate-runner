@@ -2,7 +2,7 @@ name: Renovate
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '*/15 * * * *'
 jobs:
   renovate:
     runs-on: ubuntu-latest
@@ -17,3 +17,4 @@ jobs:
         env:
           RENOVATE_AUTODISCOVER: true
           RENOVATE_PLATFORM: github
+          LOG_LEVEL: debug
