@@ -17,3 +17,4 @@ jobs:
         env:
           RENOVATE_AUTODISCOVER: true
           RENOVATE_PLATFORM: github
+          RENOVATE_FORK_PROCESSING: enabled
