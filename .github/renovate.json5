@@ -1,74 +1,112 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "additionalBranchPrefix": "{{parentDir}}-",
-  "configMigration": true,
-  "dependencyDashboardOSVVulnerabilitySummary": "all",
-  "lockFileMaintenance": { "enabled": true },
-  "automerge": true,
-  "assignAutomerge": true,
-  "assignees": ["RelativeSure"],
-  "extends": [
-    "config:recommended",
-    "docker:pinDigests",
-    "helpers:pinGitHubActionDigests",
-    ":pinDevDependencies"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  additionalBranchPrefix: '{{parentDir}}-',
+  configMigration: true,
+  dependencyDashboardOSVVulnerabilitySummary: 'all',
+  lockFileMaintenance: {
+    enabled: true,
+  },
+  automerge: true,
+  assignAutomerge: true,
+  assignees: [
+    'RelativeSure',
   ],
-  "kubernetes": {
-    "fileMatch": [
-      "\\.yaml$",
-      "\\.yml$"
-    ]
-  },
-  "npm": {
-    "enabled": true
-  },
-  "nix": {
-    "enabled": true
-  },
-  "python": {
-    "enabled": true
-  },
-  "vulnerabilityAlerts": {
-    "enabled": true
-  },
-  "enabledManagers": [
-    "ansible",
-    "ansible-galaxy",
-    "bun",
-    "dockerfile",
-    "flux",
-    "github-actions",
-    "helm-values",
-    "helmfile",
-    "helmv3",
-    "kubernetes",
-    "kustomize",
-    "npm",
-    "pep621", 
-    "pep723",
-    "pip-compile",
-    "pip_requirements",
-    "pip_setup",
-    "pipenv",
-    "poetry",
-    "pyenv",
-    "runtime-version",
-    "setup-cfg",
-    "terraform",
-    "terraform-version",
-    "tflint-plugin",
+  extends: [
+    'config:recommended',
+    'docker:pinDigests',
+    'helpers:pinGitHubActionDigests',
+    ':pinDevDependencies',
   ],
-  "packageRules": [
-    { "matchUpdateTypes": ["major"], "addLabels": ["SemVer Major"] },
-    { "matchUpdateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
-    { 
-      "matchUpdateTypes": ["lockFileMaintenance"],
-      "addLabels": ["SemVer lockFileMaintenance"] 
+  kubernetes: {
+    fileMatch: [
+      '\\.yaml$',
+      '\\.yml$',
+    ],
+  },
+  npm: {
+    enabled: true,
+  },
+  nix: {
+    enabled: true,
+  },
+  vulnerabilityAlerts: {
+    enabled: true,
+  },
+  enabledManagers: [
+    'ansible',
+    'ansible-galaxy',
+    'bun',
+    'dockerfile',
+    'flux',
+    'github-actions',
+    'helm-values',
+    'helmfile',
+    'helmv3',
+    'kubernetes',
+    'kustomize',
+    'npm',
+    'pep621',
+    'pep723',
+    'pip-compile',
+    'pip_requirements',
+    'pip_setup',
+    'pipenv',
+    'poetry',
+    'pyenv',
+    'runtime-version',
+    'setup-cfg',
+    'terraform',
+    'terraform-version',
+    'tflint-plugin',
+  ],
+  packageRules: [
+    {
+      matchCategories: [
+        'python',
+      ],
+      enabled: true,
     },
-    { 
-      "matchUpdateTypes": ["patch", "digest", "bump"],
-      "addLabels": ["SemVer Patch"]
+    {
+      matchUpdateTypes: [
+        'major',
+      ],
+      addLabels: [
+        'SemVer Major',
+      ],
     },
-    { "matchCategories": ["js"], "addLabels": ["Lang JS"] }
-  ]
+    {
+      matchUpdateTypes: [
+        'minor',
+      ],
+      addLabels: [
+        'SemVer Minor',
+      ],
+    },
+    {
+      matchUpdateTypes: [
+        'lockFileMaintenance',
+      ],
+      addLabels: [
+        'SemVer lockFileMaintenance',
+      ],
+    },
+    {
+      matchUpdateTypes: [
+        'patch',
+        'digest',
+        'bump',
+      ],
+      addLabels: [
+        'SemVer Patch',
+      ],
+    },
+    {
+      matchCategories: [
+        'js',
+      ],
+      addLabels: [
+        'Lang JS',
+      ],
+    },
+  ],
 }
