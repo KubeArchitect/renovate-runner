@@ -25,6 +25,9 @@
   "nix": {
     "enabled": true
   },
+  "python": {
+    "enabled": true
+  },
   "vulnerabilityAlerts": {
     "enabled": true
   },
@@ -41,6 +44,7 @@
     "kubernetes",
     "kustomize",
     "npm",
+    "python",
     "terraform",
     "terraform-version",
     "tflint-plugin",
