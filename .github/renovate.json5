@@ -36,6 +36,7 @@
     'ansible',
     'ansible-galaxy',
     'bun',
+    'devcontainer',
     'dockerfile',
     'flux',
     'github-actions',
