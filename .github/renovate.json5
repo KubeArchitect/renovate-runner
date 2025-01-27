@@ -7,10 +7,6 @@
     enabled: true,
   },
   automerge: true,
-  assignAutomerge: true,
-  assignees: [
-    'RelativeSure',
-  ],
   extends: [
     'config:recommended',
     'docker:pinDigests',
