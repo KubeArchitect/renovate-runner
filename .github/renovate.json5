@@ -14,9 +14,9 @@
     ':pinDevDependencies',
   ],
   kubernetes: {
-    fileMatch: [
-      '\\.yaml$',
-      '\\.yml$',
+    managerFilePatterns: [
+      '/\\.yaml$/',
+      '/\\.yml$/',
     ],
   },
   npm: {
